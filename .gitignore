@@ -1,1 +1,8 @@
 .DS_Store
+atom/compile-cache
+atom/storage
+atom/packages
+atom/blob-store
+atom/.node-gyp
+atom/.git-history
+atom/.apm
