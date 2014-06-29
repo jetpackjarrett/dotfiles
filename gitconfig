@@ -1,0 +1,14 @@
+[color]
+  branch = auto
+  diff   = auto
+  status = auto
+[user]
+  name  = Jarrett Gossett
+  email = jarrettgossett@gmail.com
+[alias]
+  st = status
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  la = "!git config -l | grep alias | cut -c 7-"
+  cb = checkout -b

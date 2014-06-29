@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Open vnc connection
+open "vnc://$@";
