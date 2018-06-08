@@ -1,0 +1,44 @@
+source $DOTFILES/antigen.zsh
+
+# Load oh-my-zsh
+antigen use oh-my-zsh
+
+antigen bundle <<EOBUNDLES
+    # Bundles from the default repo (robbyrussell's oh-my-zsh)
+    git
+
+    # Syntax highlighting bundle.
+    zsh-users/zsh-syntax-highlighting
+
+    # Fish-like auto suggestions
+    zsh-users/zsh-autosuggestions
+
+    # Extra zsh completions
+    zsh-users/zsh-completions
+EOBUNDLES
+
+# Load theme
+antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
+
+# Spaceship config
+SPACESHIP_PROMPT_ORDER=(
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  node          # Node.js section
+  ruby          # Ruby section
+  php           # PHP section
+  docker        # Docker section
+  aws           # Amazon Web Services section
+  exec_time     # Execution time
+  line_sep      # Line break
+  battery       # Battery level and status
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+
+SPACESHIP_PROMPT_DEFAULT_PREFIX=": "
+
+# Tell antigen that you're done
+antigen apply
