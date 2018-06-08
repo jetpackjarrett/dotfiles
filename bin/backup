@@ -1,3 +1,0 @@
-# Backup a file
-cp $1 `basename $1`-`date +%Y%m%d%H%M`.backup;
-echo "$1 ->" `basename $1`-`date +%Y%m%d%H%M`.backup;
