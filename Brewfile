@@ -39,16 +39,15 @@ cask '1password'
 cask 'screenhero'
 cask 'spectacle'
 cask 'transmission'
-cask 'virtualbox'
 cask 'vlc'
 cask 'font-menlo-for-powerline'
 cask 'font-hack'
 mas install 'Xcode', id: 497799835
 mas install 'Disk Care', id: 913724705
 mas install 'Fantastical 2', id: 975937182
-mas install 'Things', id: 407951449
+mas install 'Things 3', id: 904280696
 mas install 'Pocket', id: 568494494
-mas install 'Tweetbot', id: 557168941
+mas install 'Tweetbot 3', id: 1384080005
 mas install 'Evernote', id: 406056744
 mas install 'Caffeine', id: 411246225
-mas install 'Slack', id: 803453959
+mas install 'ToothFairy', id: 1191449274
