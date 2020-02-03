@@ -24,20 +24,12 @@ antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
 SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  node          # Node.js section
-  ruby          # Ruby section
-  php           # PHP section
-  docker        # Docker section
-  aws           # Amazon Web Services section
-  exec_time     # Execution time
-  line_sep      # Line break
-  battery       # Battery level and status
-  jobs          # Background jobs indicator
+  #git           # Git section (git_branch + git_status)
+  git_branch
   char          # Prompt character
 )
-
-SPACESHIP_CHAR_SYMBOL="❯ "
+SPACESHIP_GIT_PREFIX=""
+SPACESHIP_CHAR_SYMBOL=" ❯ "
 SPACESHIP_PROMPT_DEFAULT_PREFIX=": "
 SPACESHIP_PROMPT_SEPARATE_LINE=false
 
