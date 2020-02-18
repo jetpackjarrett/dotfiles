@@ -4,12 +4,6 @@ SYMLINKS="zshrc gitconfig"
 echo "$(tput setaf 4)Creating .zshrc.local with dotfile path....$(tput sgr 0)"
 echo "DOTFILES=$DOTFILES" > $HOME/.zshrc.local
 
-echo "$(tput setaf 4)Installing zsh from homebrew....$(tput sgr 0)"
-brew install zsh
-
-echo "$(tput setaf 4)Setting shell to zsh....$(tput sgr 0)"
-chsh -s $(which zsh)
-
 echo "$(tput setaf 4)Creating symlinks....$(tput sgr 0)"
 for symlink in $SYMLINKS
 do
