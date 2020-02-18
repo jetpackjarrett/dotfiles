@@ -30,6 +30,7 @@ brew 'wget'
 cask 'caffeine'
 cask 'colloquy'
 cask 'dropbox'
+cask 'droplr'
 cask 'firefox'
 cask 'google-chrome'
 cask 'iterm2'
@@ -39,6 +40,7 @@ cask 'transmission'
 cask 'vlc'
 cask 'font-menlo-for-powerline'
 cask 'font-hack'
+cask 'visual-studio-code'
 mas install 'Xcode', id: 497799835
 mas install 'Fantastical 3', id: 975937182
 mas install 'Things 3', id: 904280696
@@ -46,3 +48,6 @@ mas install 'Pocket', id: 568494494
 mas install 'Tweetbot 3', id: 1384080005
 mas install 'Caffeine', id: 411246225
 mas install 'ToothFairy', id: 1191449274
+mas install 'Slack', id: 803453959
+mas install 'Airmail 4', id: 918858936
+
