@@ -35,19 +35,19 @@ cask 'firefox'
 cask 'google-chrome'
 cask 'iterm2'
 cask '1password'
-cask 'spectacle'
+cask 'rectangle'
 cask 'transmission'
 cask 'vlc'
 cask 'font-menlo-for-powerline'
 cask 'font-hack'
 cask 'visual-studio-code'
-mas install 'Xcode', id: 497799835
-mas install 'Fantastical 3', id: 975937182
-mas install 'Things 3', id: 904280696
-mas install 'Pocket', id: 568494494
-mas install 'Tweetbot 3', id: 1384080005
-mas install 'Caffeine', id: 411246225
-mas install 'ToothFairy', id: 1191449274
-mas install 'Slack', id: 803453959
-mas install 'Airmail 4', id: 918858936
+mas 'Xcode', id: 497799835
+mas 'Fantastical 3', id: 975937182
+mas 'Things 3', id: 904280696
+mas 'Pocket', id: 568494494
+mas 'Tweetbot 3', id: 1384080005
+mas 'Caffeine', id: 411246225
+mas 'ToothFairy', id: 1191449274
+mas 'Slack', id: 803453959
+mas 'Airmail 4', id: 918858936
 

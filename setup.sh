@@ -17,6 +17,3 @@ do
     echo "$(tput setaf 5)  $src --> $sym $(tput sgr 0)"
     ln -sf $src $sym
 done
-
-echo "Configuring Spectacle shotrcuts..."
-cp -r spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null

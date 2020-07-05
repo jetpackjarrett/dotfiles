@@ -25,9 +25,13 @@ SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   host          # Hostname section
   git           # Git section (git_branch + git_status)
-  #git_branch
   char          # Prompt character
 )
+ SPACESHIP_RPROMPT_ORDER=(
+    node
+    exec_time
+)
+
 SPACESHIP_GIT_PREFIX=""
 SPACESHIP_CHAR_SYMBOL="❯ "
 SPACESHIP_PROMPT_DEFAULT_PREFIX=": "
