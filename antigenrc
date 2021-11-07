@@ -19,16 +19,17 @@ EOBUNDLES
 
 # Load theme
 antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
+SPACESHIP_NODE_SHOW=true
 
 # Spaceship config
 SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   host          # Hostname section
   git           # Git section (git_branch + git_status)
+  node
   char          # Prompt character
 )
  SPACESHIP_RPROMPT_ORDER=(
-    node
     exec_time
 )
 
