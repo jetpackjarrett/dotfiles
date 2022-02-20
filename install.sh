@@ -14,9 +14,18 @@ echo "$(tput setaf 2)Installing git from homebrew...$(tput sgr 0)"
 brew install git
 
 echo "$(tput setaf 2)Cloning dotfiles...$(tput sgr 0)"
-git clone https://github.com/jetpackjarrett/dotfiles.git ~/.dotfiles
+git clone git@github.com:jetpackjarrett/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
 echo "$(tput setaf 2)Running setup...$(tput sgr 0)"
 echo ' '
 sh setup.sh
+
+echo 'Installing apps from Brewfile...'
+cd ~/.dotfiles
+brew tap Homebrew/bundle
+brew bundle
+
+echo 'Configuring iTerm...'
+cp ~/iterm.json Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json
+open Dracula.itermcolors
