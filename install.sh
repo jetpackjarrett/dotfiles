@@ -29,3 +29,5 @@ brew bundle
 echo 'Configuring iTerm...'
 cp ~/iterm.json Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json
 open Dracula.itermcolors
+
+echo 'All done. 🥳'
