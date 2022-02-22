@@ -17,3 +17,14 @@ do
     echo "$(tput setaf 5)  $src --> $sym $(tput sgr 0)"
     ln -sf $src $sym
 done
+
+echo '$(tput setaf 2)Installing apps from Brewfile...'
+cd ~/.dotfiles
+brew tap Homebrew/bundle
+brew bundle
+
+echo '$(tput setaf 2)Configuring iTerm...'
+cp iterm.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json
+open Dracula.itermcolors
+
+echo '$(tput setaf 2)All done! 🥳'

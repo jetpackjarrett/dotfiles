@@ -4,11 +4,10 @@
 
 ### From Scratch
 
-```bash
-bash <(curl -s https://raw.githubusercontent.com/jetpackjarrett/dotfiles/master/install.sh)
-```
-
-_Note:_ ~/.dotfiles is HARD-CODED as the location of which to symlink, the setup scripts will break if you check out the repo to any other location.
+1. Install XCode from the app store
+1. Run `xcode-select --install`
+1. Clone this repo: `git clone https://github.com/jetpackjarrett/dotfiles.git ~/.dotfiles`
+1. Run `sh ~/.dotfiles/install.sh`
 
 ### Locally (Already cloned)
 
