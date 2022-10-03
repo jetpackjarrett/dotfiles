@@ -23,6 +23,10 @@ cd ~/.dotfiles
 brew tap Homebrew/bundle
 brew bundle
 
+echo 'Creating screenshots directory at ~/Screenshots'
+mkdir ~/Screenshots
+defaults write com.apple.screencapture location ~/Screenshots
+
 echo '$(tput setaf 2)Configuring iTerm...'
 cp iterm.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json
 open Dracula.itermcolors
