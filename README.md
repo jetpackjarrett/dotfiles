@@ -2,12 +2,9 @@
 
 ## Installation
 
-### From Scratch
-
-1. Install XCode from the app store
-1. Run `xcode-select --install`
-1. Clone this repo: `git clone https://github.com/jetpackjarrett/dotfiles.git ~/.dotfiles`
-1. Run `sh ~/.dotfiles/install.sh`
+```
+bash <(curl -s https://raw.githubusercontent.com/jetpackjarrett/dotfiles/main/install.sh)
+```
 
 ### Usage
 

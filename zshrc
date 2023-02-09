@@ -18,12 +18,10 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias ll='ls -alh -G'
-alias ls="command ls -G"
 alias ip="ipconfig getifaddr en1"
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles true; killall Finder;'
 alias hidehidden='defaults write com.apple.finder AppleShowAllFiles false; killall Finder;'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

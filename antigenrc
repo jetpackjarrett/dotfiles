@@ -27,6 +27,7 @@ SPACESHIP_PROMPT_ORDER=(
   host          # Hostname section
   git           # Git section (git_branch + git_status)
   node
+  ruby
   char          # Prompt character
 )
  SPACESHIP_RPROMPT_ORDER=(

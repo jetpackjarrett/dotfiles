@@ -11,6 +11,7 @@ if [ $? -ne 0 ]; then
 else
   echo "Command Line Tools for Xcode have been installed."
 fi
+echo ""
 
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -19,10 +20,8 @@ if [[ $? != 0 ]] ; then
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
 else
-  echo "$(tput setaf 2)Updating homebrew..."
-  brew update
+  echo "$(tput setaf 2)Homebrew already installed."
 fi
-
 
 echo "$(tput setaf 2)Cloning dotfiles...$(tput sgr 0)"
 git clone git@github.com:jetpackjarrett/dotfiles.git ~/.dotfiles
