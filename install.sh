@@ -24,7 +24,7 @@ else
 fi
 
 echo "$(tput setaf 2)Cloning dotfiles...$(tput sgr 0)"
-git clone git@github.com:jetpackjarrett/dotfiles.git ~/.dotfiles
+git clone https://github.com/jetpackjarrett/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
 echo "$(tput setaf 2)Running setup...$(tput sgr 0)"
