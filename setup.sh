@@ -34,10 +34,16 @@ defaults write com.apple.screencapture type -string "jpg"
 # Safari full url
 defaults write com.apple.safari "ShowFullURLInSmartSearchField" -bool "false" && killall Safari
 
+echo '$(tput setaf 2)Configuring keyboard...'
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 echo '$(tput setaf 2)Configuring Dock...'
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock tilesize -int 36
+# Clear the dock
+defaults write com.apple.dock persistent-apps -array
+
 killall Dock
 
 echo '$(tput setaf 2)Configuring Meubar...'
@@ -75,9 +81,6 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
-echo '$(tput setaf 2)Configuring keyboard...'
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-defaults write -g ApplePressAndHoldEnabled -bool false
 
 echo '$(tput setaf 2)Configuring iTerm...'
 cp iterm.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json
