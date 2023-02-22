@@ -28,21 +28,39 @@ mkdir ~/Screenshots
 defaults write com.apple.screencapture location ~/Screenshots
 defaults write com.apple.screencapture type -string "jpg"
 
-# echo '$(tput setaf 2)Configuring iTerm...'
-# defaults write com.apple.screensaver askForPassword -int 1
+echo '$(tput setaf 2)Configuring Screensaver...'
+defaults write com.apple.screensaver askForPassword -int 1
+# Disable local Time Machine snapshots
+sudo tmutil disablelocal
+# Disable hibernation (speeds up entering sleep mode)
+sudo pmset -a hibernatemode 0
 
 # Safari full url
 defaults write com.apple.safari "ShowFullURLInSmartSearchField" -bool "false" && killall Safari
 
 echo '$(tput setaf 2)Configuring keyboard...'
+# Tab all controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write -g ApplePressAndHoldEnabled -bool false
+# Trackpad: enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# Disable “natural” (Lion-style) scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+# Stop iTunes from responding to the keyboard media keys
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 echo '$(tput setaf 2)Configuring Dock...'
+# Autohide dock
 defaults write com.apple.dock autohide -bool true
+# Set the size
 defaults write com.apple.dock tilesize -int 36
 # Clear the dock
 defaults write com.apple.dock persistent-apps -array
+# Show indicator lights for open applications in the Dock
+defaults write com.apple.dock show-process-indicators -bool true
+
 
 killall Dock
 
@@ -80,10 +98,25 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Don't create .DS_Store on external directories
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-
+# Disable dashboard
+defaults write com.apple.dashboard mcx-disabled -bool true
+# Disable Smart Quotes and Dashes
+defaults write -g NSAutomaticDashSubstitutionEnabled 0
+defaults write -g NSAutomaticQuoteSubstitutionEnabled 0
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 echo '$(tput setaf 2)Configuring iTerm...'
-cp iterm.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json
-open Dracula.itermcolors
+# Specify the preferences directory
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTerm"
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
+
+echo '$(tput setaf 2)Installing npm global commands...'
+
+npm install -g git-open
 
 echo '$(tput setaf 2)All done! 🥳'
