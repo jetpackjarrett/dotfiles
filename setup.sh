@@ -112,9 +112,4 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTer
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
-
-echo '$(tput setaf 2)Installing npm global commands...'
-
-npm install -g git-open
-
 echo '$(tput setaf 2)All done! 🥳'
