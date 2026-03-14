@@ -1,5 +1,8 @@
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
+# Path to iCloud Drive
+export ICLOUD="/Users/jarrettgossett/Library/Mobile Documents/com~apple~CloudDocs"
+
 # Exports
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
@@ -25,6 +28,4 @@ alias hidehidden='defaults write com.apple.finder AppleShowAllFiles false; killa
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# Load rbenv
-eval "$(rbenv init -)"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"

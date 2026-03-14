@@ -4,7 +4,7 @@
   status = auto
 [user]
   name  = Jarrett Gossett
-  email = jarrettgossett@gmail.com
+	email = jgossett@wistia.com
 [alias]
   main     = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
   sync     = "!git co $(git main) && git fetch origin && git reset --hard origin/$(git main)"
@@ -20,7 +20,6 @@
   recent   = "!git for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/heads"
 [core]
 	editor = code --wait
-	hooksPath = /usr/local/dd/global_hooks
 [push]
 	default = current
 [filter "lfs"]
@@ -29,3 +28,7 @@
 	required = true
 [init]
 	defaultBranch = main
+[safe]
+	directory = *
+[apply]
+  whitespace = fix
