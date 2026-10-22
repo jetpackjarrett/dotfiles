@@ -2,28 +2,33 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AIFeatureFunctionCalling</key>
-	<true/>
-	<key>AIFeatureHostedCodeInterpeter</key>
-	<true/>
-	<key>AIFeatureHostedFileSearch</key>
-	<true/>
-	<key>AIFeatureHostedWebSearch</key>
-	<true/>
-	<key>AIFeatureStreamingResponses</key>
-	<true/>
-	<key>AITermAPI</key>
-	<integer>2</integer>
-	<key>AIVectorStore</key>
-	<integer>1</integer>
-	<key>AiMaxTokens</key>
-	<integer>1000000</integer>
-	<key>AiModel</key>
-	<string>gpt-4.1</string>
-	<key>AiResponseMaxTokens</key>
-	<integer>32768</integer>
-	<key>AitermURL</key>
-	<string>https://api.openai.com/v1/responses</string>
+	<key>CodeReviewSavedPrompts</key>
+	<data>
+	W3sibmFtZSI6IkRlZmF1bHQiLCJ0ZXh0IjoiUmV2aWV3IHRoZSBwZW5kaW5nIGNoYW5n
+	ZXMgaW4gdGhpcyByZXBvLiBGbGFnIGlzc3VlcyBhIGNhcmVmdWwgbWFpbnRhaW5lciB3
+	b3VsZCBibG9jayBvbiBiZWZvcmUgbWVyZ2UsIGluIHJvdWdobHkgdGhpcyBvcmRlcjpc
+	biAgMS4gQ29ycmVjdG5lc3Mg4oCUIGxvZ2ljIGVycm9ycywgYnJva2VuIGludmFyaWFu
+	dHMsIG1pc3NlZCBlZGdlIGNhc2VzLCBvZmYtYnktb25lLCByYWNlcywgbGlmZXRpbWVc
+	L21lbW9yeSBidWdzLCBlcnJvciBwYXRocyB0aGF0IHN3YWxsb3cgZmFpbHVyZXMuXG4g
+	IDIuIFNlY3VyaXR5IOKAlCBpbmplY3Rpb24sIGF1dGhuXC9hdXRoeiBtaXN0YWtlcywg
+	c2VjcmV0IGhhbmRsaW5nLCB1bnNhZmUgZGVzZXJpYWxpemF0aW9uLCB1bnNhZmUgZGVm
+	YXVsdHMsIFRPQ1RPVS5cbiAgMy4gUmVsaWFiaWxpdHkgJiBwZXJmb3JtYW5jZSDigJQg
+	YmxvY2tpbmcgdGhlIHdyb25nIHRocmVhZCwgdW5ib3VuZGVkIHJlc291cmNlIHVzZSwg
+	YWNjaWRlbnRhbCBPKE7CsiksIHJldHJpZXMgd2l0aG91dCBiYWNrb2ZmLCBzaWxlbnQg
+	ZmFpbHVyZSBwYXRocy5cbiAgNC4gQ29udHJhY3QgcmlzayDigJQgYmVoYXZpb3IgY2hh
+	bmdlcyBjYWxsZXJzIHJlbHkgb24sIHNpbGVudGx5IGNoYW5nZWQgZGVmYXVsdHMsIGJy
+	b2tlbiBiYWNrd2FyZCBjb21wYXRpYmlsaXR5LCBtaXNzaW5nIG1pZ3JhdGlvbnMuXG5c
+	bkZvciBlYWNoIGZpbmRpbmcgY2l0ZSBgZmlsZTpsaW5lYCwgZXhwbGFpbiAqd2h5KiBp
+	dCBpcyB3cm9uZyAobm90IHdoYXQgdGhlIGNvZGUgZG9lcyksIGFuZCBwcm9wb3NlIGEg
+	Y29uY3JldGUgZml4IHdoZW4gb25lIGlzIG9idmlvdXMuIEJlIGNhbGlicmF0ZWQ6IGlm
+	IGEgZmluZGluZyBpcyBub3QgaGlnaC1jb25maWRlbmNlLCBzYXkgc28gb3Igc2tpcCBp
+	dC4gVmVyaWZ5IGNsYWltcyBhZ2FpbnN0IHRoZSBhY3R1YWwgY29kZSByYXRoZXIgdGhh
+	biBpbmZlcnJpbmcgZnJvbSBuYW1lcy5cblxuU2tpcCBwdXJlIHN0eWxlLCBmb3JtYXR0
+	aW5nLCBuYW1pbmcsIGFuZCBhbnl0aGluZyBhIGxpbnRlciBvciBDSSBhbHJlYWR5IGVu
+	Zm9yY2VzLlxuXG5JZiB5b3UgZmluZCBub3RoaW5nIHdvcnRoIGZpeGluZywgc2F5IHNv
+	IHBsYWlubHkuIiwidXVpZCI6IkQ2RDFFODQzLTFBM0UtNDlEMS1BQUVDLTNCQzVDNjNE
+	QUYyMSJ9XQ==
+	</data>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Dracula</key>
@@ -448,23 +453,9 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>82846C6A-BACE-4F13-A328-D3A60C30021C</string>
-	<key>GlobalKeyMap</key>
-	<dict>
-		<key>0xd-0x20000-0x24</key>
-		<dict>
-			<key>Action</key>
-			<integer>12</integer>
-			<key>Keycode</key>
-			<integer>13</integer>
-			<key>Modifiers</key>
-			<integer>131072</integer>
-			<key>Text</key>
-			<string>\n</string>
-			<key>Version</key>
-			<integer>1</integer>
-		</dict>
-	</dict>
+	<string>6AA678FF-BD27-4633-B166-4399593A2334</string>
+	<key>EnableAPIServer</key>
+	<true/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HideTab</key>
@@ -473,8 +464,6 @@
 	<true/>
 	<key>IRMemory</key>
 	<integer>4</integer>
-	<key>NeverBlockSystemShutdown</key>
-	<true/>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -485,11 +474,11 @@
 			<key>Ansi 0 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<integer>0</integer>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<integer>0</integer>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<integer>0</integer>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -498,7 +487,7 @@
 				<key>Green Component</key>
 				<real>0.3333333432674408</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<integer>1</integer>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
@@ -534,7 +523,7 @@
 				<key>Green Component</key>
 				<real>0.47450980392156861</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<integer>1</integer>
 			</dict>
 			<key>Ansi 14 Color</key>
 			<dict>
@@ -548,11 +537,11 @@
 			<key>Ansi 15 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<integer>1</integer>
 				<key>Green Component</key>
-				<real>1</real>
+				<integer>1</integer>
 				<key>Red Component</key>
-				<real>1</real>
+				<integer>1</integer>
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
@@ -588,7 +577,7 @@
 				<key>Green Component</key>
 				<real>0.47450980392156861</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<integer>1</integer>
 			</dict>
 			<key>Ansi 6 Color</key>
 			<dict>
@@ -624,22 +613,22 @@
 				<key>Green Component</key>
 				<real>0.33333333333333331</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<integer>1</integer>
 			</dict>
 			<key>BM Growl</key>
 			<true/>
 			<key>Background Color</key>
 			<dict>
 				<key>Alpha Component</key>
-				<real>1</real>
+				<integer>1</integer>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<integer>0</integer>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<integer>0</integer>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<integer>0</integer>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -648,13 +637,13 @@
 				<key>Alpha Component</key>
 				<real>0.5</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<integer>0</integer>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.14910027384757996</real>
+				<real>0.1491314172744751</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<integer>1</integer>
 			</dict>
 			<key>Blinking Cursor</key>
 			<false/>
@@ -695,22 +684,22 @@
 				<key>Alpha Component</key>
 				<real>0.25</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<integer>1</integer>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.92681378126144409</real>
+				<real>0.9268307089805603</real>
 				<key>Red Component</key>
-				<real>0.70214027166366577</real>
+				<real>0.70213186740875244</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<integer>1</integer>
 				<key>Green Component</key>
-				<real>1</real>
+				<integer>1</integer>
 				<key>Red Component</key>
-				<real>1</real>
+				<integer>1</integer>
 			</dict>
 			<key>Custom Command</key>
 			<string>No</string>
@@ -738,13 +727,15 @@
 				<real>0.90032327175140381</real>
 			</dict>
 			<key>Guid</key>
-			<string>82846C6A-BACE-4F13-A328-D3A60C30021C</string>
+			<string>6AA678FF-BD27-4633-B166-4399593A2334</string>
 			<key>Horizontal Spacing</key>
 			<integer>1</integer>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
 			<string></string>
+			<key>Is Dynamic Profile</key>
+			<true/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1185,26 +1176,26 @@
 			<key>Link Color</key>
 			<dict>
 				<key>Alpha Component</key>
-				<real>1</real>
+				<integer>1</integer>
 				<key>Blue Component</key>
-				<real>0.73422712087631226</real>
+				<real>0.73423302173614502</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.35915297269821167</real>
+				<real>0.35916060209274292</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<integer>0</integer>
 			</dict>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>Default</string>
+			<string>jarrett</string>
 			<key>Non Ascii Font</key>
 			<string>Monaco 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>MenloForPowerline-Regular 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1220,11 +1211,11 @@
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<integer>1</integer>
 				<key>Green Component</key>
-				<real>1</real>
+				<integer>1</integer>
 				<key>Red Component</key>
-				<real>1</real>
+				<integer>1</integer>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
@@ -1271,8 +1262,6 @@
 			<string>/Users/jarrett.gossett</string>
 		</dict>
 	</array>
-	<key>OnlyWhenMoreTabs</key>
-	<true/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
@@ -1314,10 +1303,6 @@
 	</dict>
 	<key>Print In Black And White</key>
 	<true/>
-	<key>PromptOnQuit</key>
-	<true/>
-	<key>ShowFullScreenTabBar</key>
-	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>TabStyleWithAutomaticOption</key>
@@ -1326,6 +1311,37 @@
 	<integer>0</integer>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
+	<key>Workgroups</key>
+	<data>
+	W3sibmFtZSI6IkNsYXVkZSBDb2RlIiwidW5pcXVlSWRlbnRpZmllciI6ImJ1aWx0aW4u
+	Y2xhdWRlQ29kZSIsInNlc3Npb25zIjpbeyJ1bmlxdWVJZGVudGlmaWVyIjoiYnVpbHRp
+	bi5jbGF1ZGVDb2RlLm1haW4iLCJjb21tYW5kIjoiIiwidXJsU3RyaW5nIjoiIiwiZGlz
+	cGxheU5hbWUiOiJDaGF0Iiwia2luZCI6eyJraW5kIjoicm9vdCJ9LCJ0b29sYmFySXRl
+	bXMiOlt7ImtpbmQiOiJtb2RlU3dpdGNoZXIifSx7ImtpbmQiOiJnaXRTdGF0dXMifSx7
+	ImtpbmQiOiJhdXRvUmVxdWVzdFJldmlld1doZW5JZGxlIn1dLCJtb2RlIjoicmVndWxh
+	ciIsInBlckZpbGVDb21tYW5kIjoiIn0seyJ1bmlxdWVJZGVudGlmaWVyIjoiYnVpbHRp
+	bi5jbGF1ZGVDb2RlLmRpZmYiLCJjb21tYW5kIjoiZ2l0IGRpZmZ0b29sIC15IC14IHZp
+	bWRpZmYgXFwoZ2l0QmFzZSkiLCJ1cmxTdHJpbmciOiIiLCJkaXNwbGF5TmFtZSI6IkRp
+	ZmYiLCJwYXJlbnRJRCI6ImJ1aWx0aW4uY2xhdWRlQ29kZS5tYWluIiwia2luZCI6eyJr
+	aW5kIjoicGVlciJ9LCJ0b29sYmFySXRlbXMiOlt7ImtpbmQiOiJtb2RlU3dpdGNoZXIi
+	fSx7ImtpbmQiOiJjaGFuZ2VkRmlsZVNlbGVjdG9yIn0seyJraW5kIjoiZ2l0QmFzZVNl
+	bGVjdG9yIn0seyJyZWxvYWRTaG9ydGN1dCI6eyJzZXJpYWxpemVkIjoiMHg3Mi0weDEw
+	MDAwMC0weGYifSwiYmFja1Nob3J0Y3V0Ijp7InNlcmlhbGl6ZWQiOiIweGY3MDItMHgz
+	NDAwMDAtMHg3YiJ9LCJraW5kIjoibmF2aWdhdGlvbiIsImZvcndhcmRTaG9ydGN1dCI6
+	eyJzZXJpYWxpemVkIjoiMHhmNzAzLTB4MzQwMDAwLTB4N2MifX1dLCJtb2RlIjoiZGlm
+	ZiIsInBlckZpbGVDb21tYW5kIjoiZ2l0IGRpZmZ0b29sIC15IC14IHZpbWRpZmYgXFwo
+	Z2l0QmFzZSkgLS0gXFwoZmlsZSkifSx7InVuaXF1ZUlkZW50aWZpZXIiOiJidWlsdGlu
+	LmNsYXVkZUNvZGUucmV2aWV3IiwiY29tbWFuZCI6ImNsYXVkZSBcXChjb2RlUmV2aWV3
+	UHJvbXB0KSAtLWFwcGVuZC1zeXN0ZW0tcHJvbXB0LWZpbGUgJ1xcKGNvZGVSZXZpZXdT
+	eXN0ZW1Qcm9tcHRGaWxlKScgLS1zZXR0aW5ncyAnXFwoaXRlcm0yLmFwcEJ1bmRsZVBh
+	dGgpXC9Db250ZW50c1wvUmVzb3VyY2VzXC9jb2RlLXJldmlldy1zZXR0aW5ncy50eHQn
+	IiwidXJsU3RyaW5nIjoiIiwiZGlzcGxheU5hbWUiOiJDb2RlIFJldmlldyIsInBhcmVu
+	dElEIjoiYnVpbHRpbi5jbGF1ZGVDb2RlLm1haW4iLCJraW5kIjp7ImtpbmQiOiJwZWVy
+	In0sInRvb2xiYXJJdGVtcyI6W3sia2luZCI6Im1vZGVTd2l0Y2hlciJ9LHsia2luZCI6
+	InJlbG9hZCIsInNob3J0Y3V0Ijp7InNlcmlhbGl6ZWQiOiIweDcyLTB4MTAwMDAwLTB4
+	ZiJ9fSx7ImtpbmQiOiJhdXRvU2VuZENsaXBwaW5nc1doZW5JZGxlIn1dLCJtb2RlIjoi
+	Y29kZVJldmlldyIsInBlckZpbGVDb21tYW5kIjoiIn1dfV0=
+	</data>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>
