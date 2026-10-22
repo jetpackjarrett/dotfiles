@@ -68,7 +68,6 @@ cask "notion"
 cask "obsidian"
 cask "raycast"
 cask "rectangle"                 # window management
-cask "spotify"
 cask "transmission"
 cask "visual-studio-code"
 cask "vlc"
@@ -82,29 +81,9 @@ cask "steam"
 
 # ----------------------------------------------------------- mac app store ---
 mas "Fantastical", id: 975937182
-mas "GoodLinks", id: 1474335294
-mas "KeyPad", id: 1491684442
-mas "Later", id: 1507396839
 mas "Save to Raindrop.io", id: 1549370672
-mas "Shareful", id: 1522267256
 mas "Slack", id: 803453959
 mas "Things", id: 904280696
-mas "ToothFairy", id: 1191449274
 mas "Xcode", id: 497799835
 
-# Media / photo utilities
-mas "Batch Exif Editor Pro", id: 1516458522
-mas "ExifPurge", id: 784466108
-mas "Photo Naminator", id: 1598189356
 
-# Home / music / play
-mas "ControllerForHomeKit", id: 1198176727
-mas "Tonebridge Guitar Effects", id: 1263858588
-mas "Balatro", id: 6502451661
-mas "Spring Lite", id: 1637405989
-
-# iWork + GarageBand (free, but re-downloading them by hand is tedious)
-mas "GarageBand", id: 682658836
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
