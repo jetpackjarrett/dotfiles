@@ -1,0 +1,71 @@
+# Starship prompt -- a port of the previous spaceship-prompt layout:
+#   dir  host  git  node  ruby  ❯          (exec time on the right)
+
+add_newline = false
+
+format = """
+$directory\
+$hostname\
+$git_branch\
+$git_state\
+$git_status\
+$nodejs\
+$ruby\
+$character"""
+
+right_format = "$cmd_duration"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold green)"
+
+[directory]
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = "…/"
+
+# Only shown over SSH, matching spaceship's default behaviour.
+[hostname]
+ssh_only = true
+format = "[@$hostname]($style) "
+style = "bold yellow"
+
+[git_branch]
+format = "[$branch]($style) "
+style = "bold purple"
+symbol = ""
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "bold red"
+conflicted = "="
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bold yellow"
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+symbol = "⬢ "
+style = "bold green"
+
+[ruby]
+format = "[$symbol($version )]($style)"
+symbol = "💎 "
+style = "bold red"
+
+[cmd_duration]
+min_time = 2000
+format = "[$duration]($style)"
+style = "dimmed white"

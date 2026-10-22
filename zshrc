@@ -1,36 +1,110 @@
+# ~/.zshrc -> $DOTFILES/zshrc
+# Machine-specific values (DOTFILES path, work paths, tokens) live in ~/.zshrc.local.
+
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+: ${DOTFILES:="$HOME/.dotfiles"}
 
-# Path to iCloud Drive
-export ICLOUD="/Users/jarrettgossett/Library/Mobile Documents/com~apple~CloudDocs"
-
-# Exports
+# ---------------------------------------------------------------- homebrew ---
+# .zprofile sets this for login shells; repeat it here so non-login shells work.
+if [[ -z "$HOMEBREW_PREFIX" ]]; then
+  for brewpath in /opt/homebrew/bin/brew /usr/local/bin/brew; do
+    [[ -x "$brewpath" ]] && eval "$("$brewpath" shellenv)" && break
+  done
+fi
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export HOMEBREW_NO_ENV_HINTS=1
 
-# Paths
-export PATH=$PATH:~/.bin
-export PATH=$PATH:/usr/local/share/npm/bin
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
+# ------------------------------------------------------------------- paths ---
+export PATH="$HOME/bin:$HOME/.bin:$DOTFILES/bin:$PATH"
 
-# Antigen
-source $DOTFILES/antigenrc
+# ----------------------------------------------------------------- plugins ---
+# Antidote loads a compiled static plugin file, rebuilt whenever the list changes.
+ZSH_PLUGINS_TXT="$DOTFILES/zsh_plugins.txt"
+ZSH_PLUGINS_ZSH="${ZDOTDIR:-$HOME}/.zsh_plugins.zsh"
+ANTIDOTE_HOME="$(brew --prefix antidote 2>/dev/null)/share/antidote"
+if [[ -r "$ANTIDOTE_HOME/antidote.zsh" ]]; then
+  source "$ANTIDOTE_HOME/antidote.zsh"
+  if [[ ! -r "$ZSH_PLUGINS_ZSH" || "$ZSH_PLUGINS_TXT" -nt "$ZSH_PLUGINS_ZSH" ]]; then
+    antidote bundle <"$ZSH_PLUGINS_TXT" >|"$ZSH_PLUGINS_ZSH"
+  fi
+  source "$ZSH_PLUGINS_ZSH"
+fi
 
-# Aliases
+# ------------------------------------------------------------------ history ---
+HISTSIZE=50000
+SAVEHIST=50000
+setopt share_history hist_ignore_all_dups hist_ignore_space hist_reduce_blanks
+setopt extended_history inc_append_history
+
+# ------------------------------------------------------------------ prompt ---
+export STARSHIP_CONFIG="$DOTFILES/starship.toml"
+command -v starship >/dev/null && eval "$(starship init zsh)"
+
+# --------------------------------------------------------------- languages ---
+# nvm, loaded lazily -- sourcing it eagerly costs ~400ms of shell startup.
+export NVM_DIR="$HOME/.nvm"
+nvm() {
+  unset -f nvm node npm npx 2>/dev/null
+  [[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ]] && source "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
+  [[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ]] && \
+    source "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
+  nvm "$@"
+}
+# Put the default nvm node on PATH without sourcing nvm, and fall back to the
+# real nvm the first time node/npm/npx is actually invoked.
+if [[ -s "$NVM_DIR/alias/default" ]]; then
+  nvm_default="$(<"$NVM_DIR/alias/default")"
+  [[ -d "$NVM_DIR/versions/node/$nvm_default/bin" ]] \
+    && export PATH="$NVM_DIR/versions/node/$nvm_default/bin:$PATH"
+  unset nvm_default
+fi
+for cmd in node npm npx; do
+  command -v "$cmd" >/dev/null || eval "$cmd() { nvm use default >/dev/null; $cmd \"\$@\" }"
+done
+unset cmd
+
+# rbenv
+command -v rbenv >/dev/null && eval "$(rbenv init - zsh)"
+
+# Yarn global binaries
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# ---------------------------------------------------------------- fzf / cd ---
+command -v fzf >/dev/null && source <(fzf --zsh)
+command -v zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
+
+# ----------------------------------------------------------------- aliases ---
 alias mkdir='mkdir -p'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias ll='ls -alh -G'
-alias ip="ipconfig getifaddr en1"
-alias showhidden='defaults write com.apple.finder AppleShowAllFiles true; killall Finder;'
-alias hidehidden='defaults write com.apple.finder AppleShowAllFiles false; killall Finder;'
+alias ip='ipconfig getifaddr en0'
+alias dotfiles="cd $DOTFILES"
+alias reload='exec zsh'
+alias showhidden='defaults write com.apple.finder AppleShowAllFiles true; killall Finder'
+alias hidehidden='defaults write com.apple.finder AppleShowAllFiles false; killall Finder'
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+if command -v eza >/dev/null; then
+  alias ls='eza --group-directories-first'
+  alias ll='eza -lah --git --group-directories-first'
+  alias lt='eza --tree --level=2 --group-directories-first'
+else
+  alias ll='ls -alhG'
+fi
+command -v bat >/dev/null && alias cat='bat --paging=never'
+command -v lazygit >/dev/null && alias lg='lazygit'
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# Update everything: dotfiles, brew bundle, plugins.
+dotup() {
+  git -C "$DOTFILES" pull --ff-only \
+    && brew update && brew bundle install --file="$DOTFILES/Brewfile" && brew upgrade && brew cleanup \
+    && antidote update \
+    && exec zsh
+}
 
-# nvm (sourced last so its node/npm take priority over other installs)
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# ------------------------------------------------------------------- misc ---
+export EDITOR="code --wait"
+export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+
+# iTerm2 shell integration
+[[ -e "$HOME/.iterm2_shell_integration.zsh" ]] && source "$HOME/.iterm2_shell_integration.zsh"

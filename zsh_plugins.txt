@@ -1,0 +1,22 @@
+# Antidote plugin bundle. Regenerate the static cache with `antidote bundle < zsh_plugins.txt`
+# (zshrc does this automatically whenever this file is newer than the cache).
+
+# Oh-My-Zsh support shim: lets the ohmyzsh/* bundles below work standalone.
+getantidote/use-omz
+ohmyzsh/ohmyzsh path:lib/clipboard.zsh
+ohmyzsh/ohmyzsh path:lib/completion.zsh
+ohmyzsh/ohmyzsh path:lib/history.zsh
+ohmyzsh/ohmyzsh path:lib/key-bindings.zsh
+
+# Oh-My-Zsh plugins
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/macos
+
+# Extra completions (must load before compinit, which antidote runs for us)
+zsh-users/zsh-completions path:src kind:fpath
+
+# Fish-like autosuggestions
+zsh-users/zsh-autosuggestions
+
+# Syntax highlighting -- must be last.
+zsh-users/zsh-syntax-highlighting

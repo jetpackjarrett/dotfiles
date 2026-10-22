@@ -1,34 +1,104 @@
-[color]
-  branch = auto
-  diff   = auto
-  status = auto
 [user]
-  name  = Jarrett Gossett
+	name = Jarrett Gossett
 	email = jgossett@wistia.com
-[alias]
-  main     = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
-  sync     = "!git co $(git main) && git fetch origin && git reset --hard origin/$(git main)"
-  st       = status
-  ls       = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-  ll       = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-  lds      = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-  la       = "!git config -l | grep alias | cut -c 7-"
-  cb       = checkout -b
-  co       = checkout
-  nuke     = "!git co $(git main) && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-  nuke-all = "!git co $(git main) && git branch | grep -v '\\*' | xargs -n 1 git branch -D"
-  recent   = "!git for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/heads"
+
+[init]
+	defaultBranch = main
+
 [core]
 	editor = code --wait
+	# Fall back to less if delta is not installed yet (e.g. mid-bootstrap).
+	pager = command -v delta >/dev/null 2>&1 && exec delta || exec less -FRX
+	excludesfile = ~/.gitignore_global
+
+[interactive]
+	diffFilter = command -v delta >/dev/null 2>&1 && exec delta --color-only || exec cat
+
+[delta]
+	navigate = true
+	line-numbers = true
+	side-by-side = false
+	hyperlinks = true
+
+[merge]
+	conflictstyle = zdiff3
+
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	status = auto
+
 [push]
 	default = current
+	autoSetupRemote = true
+	followTags = true
+
+[pull]
+	ff = only
+
+[fetch]
+	prune = true
+	pruneTags = true
+
+[rebase]
+	autoStash = true
+	autoSquash = true
+	updateRefs = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = default
+	renames = true
+
+[branch]
+	sort = -committerdate
+
+[tag]
+	sort = version:refname
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
+[column]
+	ui = auto
+
+[help]
+	autocorrect = prompt
+
+[apply]
+	whitespace = fix
+
+[commit]
+	verbose = true
+
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[init]
-	defaultBranch = main
+
 [safe]
 	directory = *
-[apply]
-  whitespace = fix
+
+[alias]
+	main     = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
+	sync     = "!git co $(git main) && git fetch origin && git reset --hard origin/$(git main)"
+	st       = status
+	ls       = log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]\" --decorate
+	ll       = log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]\" --decorate --numstat
+	lds      = log --pretty=format:\"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]\" --decorate --date=short
+	la       = "!git config -l | grep alias | cut -c 7-"
+	cb       = checkout -b
+	co       = checkout
+	sw       = switch
+	nuke     = "!git co $(git main) && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	nuke-all = "!git co $(git main) && git branch | grep -v '\\*' | xargs -n 1 git branch -D"
+	recent   = "!git for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/heads"
+	undo     = reset --soft HEAD~1
+	amend    = commit --amend --no-edit
+	wip      = "!git add -A && git commit -m 'wip'"
+
+# Per-machine overrides (identity, work paths). Not tracked in git.
+[include]
+	path = ~/.gitconfig.local

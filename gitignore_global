@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
+.idea/
+*.swp
+*.swo
+*~
+.vscode/*.local.json
+
+# Env / secrets -- belt and braces, these should never be committed
+.env.local
+*.pem
+
+# Tooling caches
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+__pycache__/
+node_modules/.cache/

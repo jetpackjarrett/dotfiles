@@ -1,9 +1,8 @@
 .DS_Store
-atom/compile-cache
-atom/storage
-atom/packages
-atom/blob-store
-atom/.node-gyp
-atom/.git-history
-atom/.apm
-antigenrc.zwc
+*.zwc
+*.backup
+*.backup.*
+
+# iTerm2 writes these into its prefs folder at runtime
+iTerm/AppSupport/
+iTerm/sockets/
