@@ -82,6 +82,15 @@ defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock mru-spaces -bool false      # don't reorder Spaces
 defaults write com.apple.dock persistent-apps -array      # empty the Dock
 defaults write com.apple.dock persistent-others -array
+# Folder stacks next to the Trash, newest first (Dock restarts at the end)
+if command -v dockutil >/dev/null 2>&1; then
+  for dir in Documents Downloads Screenshots; do
+    dockutil --add "$HOME/$dir" --section others --view grid --display folder \
+      --sort dateadded --no-restart >/dev/null
+  done
+else
+  printf '  (skipped Dock folders -- dockutil not installed; run ./setup.sh brew)\n'
+fi
 
 # ------------------------------------------------------------------ menubar ---
 info "Menu bar"

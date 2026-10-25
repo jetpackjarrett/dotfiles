@@ -54,6 +54,7 @@ cask "font-menlo-for-powerline"
 # -------------------------------------------------------------------- apps ---
 cask "1password"
 cask "caffeine"
+cask "claude"                    # desktop app
 cask "claude-code"
 cask "db-browser-for-sqlite"
 cask "discord"
