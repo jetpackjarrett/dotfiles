@@ -64,20 +64,11 @@ cask "gcloud-cli"
 cask "google-chrome"
 cask "iterm2"
 cask "karabiner-elements"
-cask "notion"
 cask "obsidian"
-cask "raycast"
 cask "rectangle"                 # window management
-cask "transmission"
 cask "visual-studio-code"
 cask "vlc"
-
-# ------------------------------------------------------------------- games ---
-brew "stockfish"
 cask "steam"
-# chiaki-ng (PS Remote Play) lives in an untrusted third-party tap, which
-# `brew bundle` will not auto-approve. Install it by hand if you want it:
-#   brew tap streetpea/streetpea && brew install --cask chiaki-ng
 
 # ----------------------------------------------------------- mac app store ---
 mas "Fantastical", id: 975937182
