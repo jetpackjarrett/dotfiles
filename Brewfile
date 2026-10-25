@@ -63,13 +63,13 @@ cask "finicky"                   # browser router
 cask "firefox"
 cask "gcloud-cli"
 cask "google-chrome"
+cask "mimestream"
 cask "iterm2"
 cask "karabiner-elements"
 cask "obsidian"
 cask "rectangle"                 # window management
 cask "visual-studio-code"
 cask "vlc"
-cask "steam"
 
 # ----------------------------------------------------------- mac app store ---
 mas "Fantastical", id: 975937182
@@ -77,5 +77,4 @@ mas "Save to Raindrop.io", id: 1549370672
 mas "Slack", id: 803453959
 mas "Things", id: 904280696
 mas "Xcode", id: 497799835
-
 
